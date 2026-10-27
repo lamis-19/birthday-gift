@@ -4,119 +4,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Gift for You ❤️‍🔥</title>
+<title>A Little Gift for You ❤️</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background: #050505;
+  background: #080808;
   color: #fff;
   font-family: Georgia, serif;
   text-align: center;
-  overflow-x: hidden;
 }
+
 .screen {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 28px 22px;
+  justify-content: center;
+  padding: 28px 20px;
 }
-h1 {
-  color: #ff3158;
-  font-size: clamp(30px, 8vw, 44px);
-  margin: 15px 0;
-}
-.subtitle {
-  color: #e6d9dd;
-  font-size: 18px;
-  letter-spacing: 1px;
-}
-.heart {
-  color: #ff1744;
-  font-size: 28px;
-  animation: beat 1.2s infinite;
-}
-@keyframes beat {
-  50% { transform: scale(1.2); }
-}
-button {
-  border: 1px solid #ff3158;
-  border-radius: 30px;
-  padding: 15px 27px;
-  margin-top: 25px;
-  color: white;
-  background: #b0002a;
-  font-size: 17px;
-  cursor: pointer;
-  box-shadow: 0 0 20px #ff174433;
-}
+
 #letter {
   display: none;
-  max-width: 680px;
+  padding: 35px 20px;
+  max-width: 750px;
   margin: auto;
-  padding: 35px 23px 55px;
-  text-align: left;
-  line-height: 1.9;
-  font-size: 17px;
-  animation: appear 1s ease;
 }
-@keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-#letter h2 {
-  color: #ff3158;
-  text-align: center;
-  font-size: 25px;
-  line-height: 1.5;
-}
-#letter p { margin: 24px 0; }
-.final {
-  color: #ff3158;
-  text-align: center;
-  font-size: 21px;
-  font-weight: bold;
-  margin-top: 35px;
-}
+
 .hearts {
-  text-align: center;
-  color: #ff1744;
+  color: #ff243f;
+  font-size: 24px;
   letter-spacing: 8px;
-  font-size: 23px;
-  margin: 22px 0;
+  margin: 20px 0;
+  animation: pulse 2s infinite;
+}
+
+.heart {
+  color: #e60026;
+  font-size: 65px;
+  animation: pulse 1.5s infinite;
+}
+
+h1 {
+  color: #ff294b;
+  font-size: clamp(30px, 7vw, 46px);
+  margin: 20px 0 12px;
+}
+
+.subtitle {
+  color: #d5d5d5;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+button {
+  background: #b00020;
+  color: white;
+  border: 1px solid #ff526b;
+  padding: 15px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  margin: 25px 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+h2 {
+  color: #ff294b;
+  font-size: 30px;
+  margin: 15px 0 25px;
+}
+
+.letter-text {
+  text-align: left;
+  font-size: 17px;
+  line-height: 1.95;
+  color: #f1eeee;
+}
+
+.letter-text p {
+  margin: 0 0 22px;
+}
+
+.final {
+  color: #ff294b;
+  font-size: 21px;
+  margin: 30px 0;
+  line-height: 1.7;
+}
+
+.memories-subtitle {
+  color: #c9c9c9;
+  line-height: 1.7;
+  margin: -12px 0 25px;
+}
+
+.memories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 550px;
+  margin: 0 auto 25px;
+}
+
+.memories img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 13px;
+  border: 1px solid #9d1630;
+  box-shadow: 0 0 12px #5b001b55;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@media (max-width: 380px) {
+  .memories img {
+    height: 165px;
+  }
+
+  .letter-text {
+    font-size: 16px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <section class="screen" id="welcome">
   <div class="hearts">❤️‍🔥 ❤️ ❤️‍🔥</div>
   <div class="heart">♥</div>
+
   <h1>I have something for you…</h1>
   <p class="subtitle">A little gift made just for you ❤️</p>
+
   <button onclick="openGift()">Open Your Gift 🎁</button>
+
   <div class="hearts">❤️ ❤️‍🔥 ❤️</div>
 </section>
 
 <section id="letter">
-  <h2>Happy birthday to the most special person in my life. ❤️</h2>
-
-  <p>Honestly, I don’t know what to say or where to start. You mean so much to me. I’m happy when I’m with you, and when I see you happy, I feel happy too. Even just talking to you makes me happy. I can’t imagine my life without you. Even when we weren’t together, you were never just a part of my life that would come and go. You mean the world to me. ❤️</p>
-
-  <p>I can never stay mad at you. That doesn’t mean I never get upset with you, but that’s not the point 😂❤️</p>
-
-  <p>I used to see people talking to the same person for more than a month and staying together for years, and I used to think they were crazy. I couldn’t understand how they did it. And then I fell in love too 😂😭 Now we’re almost at three years, and I still feel like I’m dreaming. Me and Ahmed, almost three years? That’s so crazy! ❤️‍🔥</p>
-
-  <p>Not gonna lie, you’re pretty lucky to have me in your life… but I guess I’m lucky to have you too. 😂❤️</p>
-
-  <p>I really wish you all the best, always. I hope this year brings you lots of happiness and that you get everything you wish for. No matter where you are or what you’re doing, I’ll always be proud of you, my doctor. ❤️</p>
-
-  <p>I love you, Ahmed, and I love everything about us. Happy birthday, my love. I hope you’re always happy and safe, and I hope we spend many more years together. May God always keep you in my life. ❤️‍🔥</p>
-
-  <div class="final">Happiest birthday to my favorite man. ❤️‍🔥</div>
   <div class="hearts">❤️‍🔥 ❤️ ❤️‍🔥</div>
+
+  <h2>Happy Birthday, My Love ❤️</h2>
+
+  <div class="letter-text">
+
+    <p>
+      Happy birthday to the most special person in my life. ❤️
+    </p>
+
+    <p>
+      Honestly, I don’t know what to say or where to start.
+      You mean so much to me. I’m happy when I’m with you,
+      and when I see you happy, I feel happy too. Even just
+      talking to you makes me happy. I can’t imagine my life
+      without you. Even when we weren’t together, you were
+      never just a part of my life that would come and go.
+      You mean the world to me. ❤️
+    </p>
+
+    <p>
+      I can never stay mad at you. That doesn’t mean I never
+      get upset with you, but that’s not the point 😂❤️
+    </p>
+
+    <p>
+      I used to see people talking to the same person for more
+      than a month and staying together for years, and I used
+      to think they were crazy. I couldn’t understand how they
+      did it. And then I fell in love too 😂😭 Now we’re almost
+      at three years, and I still feel like I’m dreaming.
+      Me and Ahmed, almost three years? That’s so crazy! ❤️‍🔥
+    </p>
+
+    <p>
+      Not gonna lie, you’re pretty lucky to have me in your
+      life… but I guess I’m lucky to have you too. 😂❤️
+    </p>
+
+    <p>
+      I really wish you all the best, always. I hope this year
+      brings you lots of happiness and that you get everything
+      you wish for. No matter where you are or what you’re
+      doing, I’ll always be proud of you, my doctor. ❤️
+    </p>
+
+    <p>
+      I love you, Ahmed, and I love everything about us.
+      Happy birthday, my love. I hope you’re always happy and
+      safe, and I hope we spend many more years together.
+      May God always keep you in my life. ❤️‍🔥
+    </p>
+
+  </div>
+
+  <div class="final">
+    Happiest birthday to my favorite man. ❤️‍🔥
+  </div>
+
+  <div class="hearts">❤️ ❤️‍🔥 ❤️</div>
+
+  <h2>Our Little Memories ❤️‍🔥</h2>
+  <p class="memories-subtitle">
+    Four pictures, a thousand feelings.
+  </p>
+
+  <div class="memories">
+    <img src="D5019741-BE68-4EFD-A9FB-9C6EBDCC32DA.jpeg"
+         alt="Our memory 1">
+
+    <img src="EA88DFCD-5387-4330-B01B-F80D787C9F53.png"
+         alt="Our memory 2">
+
+    <img src="IMG_6798.jpeg"
+         alt="Our memory 3">
+
+    <img src="IMG_6979.jpeg"
+         alt="Our memory 4">
+  </div>
+
+  <div class="hearts">Made with love ❤️‍🔥</div>
 </section>
 
 <script>
@@ -129,5 +250,4 @@ function openGift() {
 
 </body>
 </html>
-
 
