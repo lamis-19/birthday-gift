@@ -4,70 +4,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️‍🔥</title>
+<title>A Little Surprise ❤️‍🔥</title>
+
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background: #080808;
+  min-height: 100vh;
+  background: #070707;
   color: white;
   font-family: Georgia, serif;
   text-align: center;
-  padding: 35px 18px;
+  overflow-x: hidden;
 }
-h1 { color: #ff3158; font-size: 36px; }
-h2 { color: #ff5373; }
-p { line-height: 1.9; color: #eee; }
+
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 22px;
+}
+
+.heart {
+  font-size: 65px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.small {
+  color: #ff6b86;
+  letter-spacing: 4px;
+  font-size: 11px;
+  margin-top: 25px;
+}
+
+h1 {
+  color: #ff3158;
+  font-size: 34px;
+  line-height: 1.4;
+}
+
+p {
+  color: #eee;
+  line-height: 1.9;
+}
+
 button {
   background: #e91e4d;
   color: white;
-  border: 0;
+  border: 1px solid #ff6685;
   border-radius: 30px;
-  padding: 15px 24px;
-  font-size: 17px;
-  margin: 18px;
+  padding: 15px 26px;
+  font-size: 16px;
+  margin-top: 22px;
+  cursor: pointer;
 }
+
+button:active {
+  transform: scale(.97);
+}
+
+.hidden {
+  display: none !important;
+}
+
 .card {
-  background: #150b10;
-  border: 1px solid #702039;
-  border-radius: 18px;
-  padding: 22px;
-  margin: 25px auto;
+  width: 100%;
   max-width: 500px;
+  background: #130b0e;
+  border: 1px solid #692034;
+  border-radius: 20px;
+  padding: 25px 20px;
+  margin: 22px auto;
 }
-.hidden { display: none; }
-.heart { font-size: 48px; }
+
+h2 {
+  color: #ff5373;
+}
+
+#surprise {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.glow {
+  color: #ff3158;
+  text-shadow: 0 0 15px #e91e4d;
+}
+
+footer {
+  color: #a9a9a9;
+  padding: 25px;
+  font-size: 12px;
+}
 </style>
 </head>
+
 <body>
+
+<section class="screen" id="welcome">
   <div class="heart">❤️‍🔥</div>
-  <p>A LITTLE SURPRISE FOR YOU</p>
+  <p class="small">JUST FOR YOU</p>
+  <h1>I have something<br>for you…</h1>
+  <p>Something special is waiting for you 🖤</p>
+  <button onclick="openGift()">Open your gift 🎁</button>
+  <p style="color:#777;font-size:12px">Made just for this moment</p>
+</section>
+
+<section id="surprise" class="hidden">
+  <div class="heart">❤️‍🔥</div>
+  <p class="small">JANUARY 1ST</p>
   <h1>Happy Birthday!</h1>
-  <p>To someone who means so much to me 🖤</p>
+  <p class="glow">Today is all about you 🖤</p>
 
-  <button onclick="document.getElementById('gift').classList.toggle('hidden')">
-    Open Your Gift 🎁
-  </button>
-
-  <div id="gift" class="hidden">
-    <div class="card">
-      <h2>To My Favorite Person 🖤</h2>
-      <p>
-        Happy birthday to someone truly special to me.
-        I hope this year brings you happiness, peace,
-        success, and beautiful memories.
-        I'm so grateful for the moments we share.
-        You deserve all the beautiful things in life.
-        Happy birthday ❤️‍🔥
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Our Memories 📸</h2>
-      <p>Our favorite photos and memories will be here.</p>
-      <p>Every little moment has its own special place in my heart. 🖤</p>
-    </div>
+  <div class="card">
+    <h2>To someone special…</h2>
+    <p>
+      Happy birthday to someone who means so much to me.
+      I hope this new year of your life brings you happiness,
+      peace, success, and everything your heart wishes for.
+      <br><br>
+      I hope you always find reasons to smile,
+      strength for every difficult day,
+      and beautiful moments to remember.
+      <br><br>
+      You deserve so many good things in this world.
+      I'm glad you're here, and I hope your birthday
+      is as special as you are. ❤️‍🔥
+    </p>
   </div>
 
-  <p>Made with love ❤️‍🔥</p>
+  <div class="card">
+    <h2>A little reminder 🖤</h2>
+    <p>
+      No matter how busy life gets,
+      I hope you never forget how much you can achieve
+      and how many beautiful days are still ahead of you.
+      <br><br>
+      Keep going, keep dreaming,
+      and never stop being yourself.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Our Memories 📸</h2>
+    <p>
+      This space is waiting for our favorite photos
+      and the little memories that mean the most to us.
+    </p>
+    <p class="glow">Every memory has its own story ❤️</p>
+  </div>
+
+  <div class="card">
+    <div class="heart">🖤</div>
+    <h2>One last thing…</h2>
+    <p>
+      I hope this year is kinder to you,
+      your dreams feel closer,
+      and your heart finds more peace than ever.
+    </p>
+    <h2 class="glow">Happy Birthday ❤️‍🔥</h2>
+  </div>
+
+  <footer>Made with love ❤️‍🔥</footer>
+</section>
+
+<script>
+function openGift() {
+  document.getElementById("welcome").classList.add("hidden");
+  document.getElementById("surprise").classList.remove("hidden");
+  window.scrollTo(0, 0);
+}
+</script>
+
 </body>
 </html>
