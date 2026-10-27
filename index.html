@@ -1,45 +1,106 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday ❤️‍🔥</title>
+<title>A Little Gift for You ❤️‍🔥</title>
 <style>
+* { box-sizing: border-box; }
 body {
-  background: #000;
-  color: white;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #050505;
+  color: #fff;
+  font-family: Georgia, serif;
   text-align: center;
-  padding: 30px 18px;
-  line-height: 1.8;
+  overflow-x: hidden;
 }
-h1, h2 { color: #ff1744; }
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 22px;
+}
+h1 {
+  color: #ff3158;
+  font-size: clamp(30px, 8vw, 44px);
+  margin: 15px 0;
+}
+.subtitle {
+  color: #e6d9dd;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.heart {
+  color: #ff1744;
+  font-size: 28px;
+  animation: beat 1.2s infinite;
+}
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
 button {
-  background: #e60035;
+  border: 1px solid #ff3158;
+  border-radius: 30px;
+  padding: 15px 27px;
+  margin-top: 25px;
   color: white;
-  border: 0;
-  border-radius: 25px;
-  padding: 14px 24px;
+  background: #b0002a;
   font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff174433;
 }
-#gift { display: none; max-width: 650px; margin: auto; text-align: left; }
-#gift h2, .ending { text-align: center; }
-.ending { color: #ff3158; font-weight: bold; font-size: 20px; margin-top: 30px; }
-.hearts { font-size: 25px; margin: 20px; text-align: center; }
+#letter {
+  display: none;
+  max-width: 680px;
+  margin: auto;
+  padding: 35px 23px 55px;
+  text-align: left;
+  line-height: 1.9;
+  font-size: 17px;
+  animation: appear 1s ease;
+}
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#letter h2 {
+  color: #ff3158;
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.5;
+}
+#letter p { margin: 24px 0; }
+.final {
+  color: #ff3158;
+  text-align: center;
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 35px;
+}
+.hearts {
+  text-align: center;
+  color: #ff1744;
+  letter-spacing: 8px;
+  font-size: 23px;
+  margin: 22px 0;
+}
 </style>
 </head>
 <body>
 
-<div id="welcome">
+<section class="screen" id="welcome">
   <div class="hearts">❤️‍🔥 ❤️ ❤️‍🔥</div>
-  <h1>Happy Birthday!</h1>
+  <div class="heart">♥</div>
+  <h1>I have something for you…</h1>
+  <p class="subtitle">A little gift made just for you ❤️</p>
   <button onclick="openGift()">Open Your Gift 🎁</button>
   <div class="hearts">❤️ ❤️‍🔥 ❤️</div>
-</div>
+</section>
 
-<div id="gift">
+<section id="letter">
   <h2>Happy birthday to the most special person in my life. ❤️</h2>
 
   <p>Honestly, I don’t know what to say or where to start. You mean so much to me. I’m happy when I’m with you, and when I see you happy, I feel happy too. Even just talking to you makes me happy. I can’t imagine my life without you. Even when we weren’t together, you were never just a part of my life that would come and go. You mean the world to me. ❤️</p>
@@ -54,17 +115,19 @@ button {
 
   <p>I love you, Ahmed, and I love everything about us. Happy birthday, my love. I hope you’re always happy and safe, and I hope we spend many more years together. May God always keep you in my life. ❤️‍🔥</p>
 
-  <p class="ending">Happiest birthday to my favorite man. ❤️‍🔥</p>
+  <div class="final">Happiest birthday to my favorite man. ❤️‍🔥</div>
   <div class="hearts">❤️‍🔥 ❤️ ❤️‍🔥</div>
-</div>
+</section>
 
 <script>
 function openGift() {
   document.getElementById("welcome").style.display = "none";
-  document.getElementById("gift").style.display = "block";
+  document.getElementById("letter").style.display = "block";
   window.scrollTo(0, 0);
 }
 </script>
 
 </body>
 </html>
+
+
